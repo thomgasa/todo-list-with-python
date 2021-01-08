@@ -63,7 +63,7 @@ def load_todos():
         for row in reader:
             i=i+1
             print(f'\n {i}'.join(row))
-            todos.append(row)
+            todos.append(*row) #el * rompe el objeto y muestra elementos
     
 
 # Below this code will only run if the entry file running was app.py
