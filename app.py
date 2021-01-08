@@ -40,7 +40,7 @@ def save_todos():
     """
     # your code here
     with open('todos.csv', 'w', newline='\n') as csvfile:
-        writer = csv.writer(csvfile)
+        writer = csv.writer(csvfile, delimiter='\n')
         writer.writerow(todos)
     
 def load_todos():
@@ -56,8 +56,10 @@ def load_todos():
     with open('todos.csv', newline='\n') as csvfile:
         reader=csv.reader(csvfile)
         list.clear(todos)
+        i=1
         for row in reader:
-            print('\n'.join(row))
+            i=i+1
+            print(f'\n {i}'.join(row))
             todos.append(row)
     
 
