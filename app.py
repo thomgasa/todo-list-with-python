@@ -67,6 +67,21 @@ def load_todos():
     
 
 # Below this code will only run if the entry file running was app.py
+""""importante  la línea donde el código es:
+        if __name__ == '__main__':
+    El nombre del módulo principal siempre será main, en este caso
+    para ejecutar este archivo se ejecuta el módulo app.py
+    y cómo todo el código se encuentra en este módulo entonces
+    el __name__ predeterminado del módulo será: __main__
+
+    En caso contrario, si el código se encontrara en un archivo llamado
+    code.py, y ese módulo se importa al módulo app.py y el archivo que 
+    se ejecuta es app.py, entonces el __name__ predeterminado del módulo 
+    code.py sería: code
+
+    por lo que la línea de código debería cambiar a:
+        if __name__ == 'code':
+""""
 if __name__ == '__main__':
     while stop == False:
         print("""
