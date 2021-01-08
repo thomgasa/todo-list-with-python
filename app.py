@@ -81,7 +81,7 @@ def load_todos():
 
     por lo que la línea de código debería cambiar a:
         if __name__ == 'code':
-""""
+"""
 if __name__ == '__main__':
     while stop == False:
         print("""
