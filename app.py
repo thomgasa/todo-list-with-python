@@ -20,10 +20,13 @@ def add_one_task(title):
 def print_list():
     """ Doc-string
     esta función imprime en consola las tareas guardadas
-    en la variable todos, sólo debería usarse como control
+    en la variable todos
     """
     global todos
-    print(todos)
+    i=0
+    for index in todos:
+        i=i+1
+        print(f'{i}-. {index}')
     
 def delete_task(number_to_delete):
     """ Doc-string
@@ -36,7 +39,7 @@ def delete_task(number_to_delete):
 def save_todos():
     """ Doc-string
     esta función crea/escribe un documento todos.csv
-    en el cual agrega las tareas delimitadas por ,
+    en el cual agrega las tareas delimitadas por línea nueva
     """
     # your code here
     with open('todos.csv', 'w', newline='\n') as csvfile:
@@ -46,9 +49,9 @@ def save_todos():
 def load_todos():
     # your code here
     """ Doc-string
-    esta función carga la lista de tareas en el .csv
-    luego limpia la variable (todos) y agrega en los valores
-    de la lista todos, finalmente imprime la lista en 
+    esta función carga el archivo .csv
+    luego limpia la variable todos en ejecución y agrega los valores
+    del .csv a la variable en ejecución, finalmente imprime la lista en 
     consola pero esta vez delimitada por líneas nuevas.
     Esta es la función que debería usar el usuario común, 
     dónde además verifica que el archivo .csv está correcto
